@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+    <style>
+        table {
+            width: 500px;
+            text-align: center;
+
+        }
+
+        th, td {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>English</th>
+        <th>Vietnamese</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            <textarea name="txt" id="txt" cols="15" rows="5" placeholder="Enter text"></textarea>
+        </td>
+        <td><textarea name="result" id="result" cols="15" rows="5" placeholder="Translation"></textarea>
+        </td>
+        <td>
+            <button type="button" onclick="dictionary()">Translate</button>
+        </td>
+    </tr>
+</table>
+<script>
+    let engArray = ["football", "tennis", "volleyball", "badminton", "basketball", "table tennis", "swimming", "cycling", "sailing"];
+    let vietArray = ["Bong Da", "Quan vot", "Bong Chuyen", "Cau Long", "Bong Ro", "Bong Ban", "Boi Loi", "Leo Nui", "Dua Thuyen"];
+
+    function dictionary() {
+        let engTxt = document.getElementById('txt').value;
+        let indexEng;
+        // console.log(result);
+        for (let i = 0; i < engArray.length; i++) {
+            if (engTxt === engArray[i]) {
+                indexEng = engArray.indexOf(engTxt);
+                document.getElementById('result').innerHTML = vietArray[indexEng];
+                break;
+            }
+            if (engTxt !== engArray[i]) {
+                indexEng = engArray.indexOf(engTxt);
+                document.getElementById('result').innerHTML = 'Not Found!';
+            }
+
+        }
+    }
+</script>
+</body>
+</html>

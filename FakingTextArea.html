@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise</title>
+</head>
+<body>
+<h1>Type anything slowly</h1>
+<textarea name="txt" id="txt" cols="30" rows="10" onkeydown="txtAppear()"></textarea>
+<script>
+    let txtChange = "";
+    let txtArray = ["T","Ô", "I", " ", "L","À", " ", "M", "Ộ", "T", " ", "Đ", "Ứ", "A", " ", "N", "G", "Ố", "C", " ", "!", "!"];
+    function txtAppear(){
+        let txtLength = document.getElementById('txt').value;
+
+        for (i=1; i < txtLength.length; i++){
+            txtChange = txtChange + txtArray[i];
+            if (i === 22){
+                document.getElementById('txt').value = "";
+                txtChange = '';
+            }
+        }
+        document.getElementById('txt').value = txtChange;
+        txtChange = "";
+
+       txtAppear();
+    }
+</script>
+</body>
+</html>

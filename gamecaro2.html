@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Caro</title>
+</head>
+<body>
+<h1>Caro Game Simple</h1>
+<div id="output"></div>
+<br>
+<button type="button" onclick="gamePlayX()">Play X</button>
+<button type="button" onclick="gamePlayO()">Play O</button>
+<script>
+    let gameCaro = [];
+    let data = '';
+    for (let i = 0; i < 5; i++) {
+        gameCaro[i] = ['.', '.', '.', '.', '.'];
+    }
+    for (let i = 0; i < gameCaro.length; i++) {
+        for (let j = 0; j < gameCaro[i].length; j++) {
+            data += gameCaro[i][j] + "&nbsp &nbsp &nbsp &nbsp";
+        }
+        data += "<br/>";
+    }
+    // data += '<button type="button" onclick="gamePlayX()">Play X</button>';
+    document.getElementById('output').innerHTML = data;
+
+    function gamePlayX() {
+        data = '';
+        let numAOfX = prompt('Moi Nhap gia tri hang cua X');
+        let numBOfX = prompt('Moi Nhap gia tri cot cua X');
+        while (numAOfX >= 5 || numBOfX >= 5) {
+            numAOfX = prompt('Moi Nhap lai gia tri hang cua X');
+            numBOfX = prompt('Moi Nhap lai gia tri cot cua X');
+        }
+        gameCaro[numAOfX][numBOfX] = 'x';
+        for (let i = 0; i < gameCaro.length; i++) {
+            for (let j = 0; j < gameCaro[i].length; j++) {
+                data += gameCaro[i][j] + "&nbsp &nbsp &nbsp &nbsp";
+            }
+            data += "<br/>";
+        }
+        // data += '<button type="button" onclick="gamePlayX()">Play X</button>';
+        document.getElementById('output').innerHTML = data;
+        checkwin('x');
+
+    }
+
+    function gamePlayO() {
+        data = '';
+        let numAOfO = prompt('Moi Nhap gia tri hang cua O');
+        let numBOfO = prompt('Moi Nhap gia tri cot cua O');
+        while (numAOfO >= 5 || numBOfO >= 5) {
+            numAOfO = prompt('Moi Nhap lai gia tri hang cua O');
+            numBOfO = prompt('Moi Nhap lai gia tri cot cua O');
+        }
+
+        gameCaro[numAOfO][numBOfO] = 'o';
+        for (let i = 0; i < gameCaro.length; i++) {
+            for (let j = 0; j < gameCaro[i].length; j++) {
+                data += gameCaro[i][j] + "&nbsp &nbsp &nbsp &nbsp";
+            }
+            data += "<br/>";
+        }
+        // data += '<button type="button" onclick="gamePlayX()">Play X</button>';
+        document.getElementById('output').innerHTML = data;
+        checkwin('o');
+    }
+
+    function checkwin(n) {
+        // Check Row
+        for (let i = 0; i < gameCaro.length; i++) {
+            for (let j = 1; j < gameCaro[i].length - 1; j++) {
+                if ((gameCaro[i][j] === gameCaro[i][j - 1]) && (gameCaro[i][j + 1] === gameCaro[i][j]) && (gameCaro[i][j] === n)) alert(n + ' win');
+            }
+        }
+        // Check Col
+        for (let j = 0; j < 5; j++) {
+            for (let i = 1; i < gameCaro.length - 1; i++) {
+                {
+                    if ((gameCaro[i][j] === gameCaro[i + 1][j]) && (gameCaro[i][j] === gameCaro[i - 1][j]) && (gameCaro[i][j] === n)) alert(n + ' win');
+                }
+            }
+        }
+        // Check Diagonal
+        for (let i = 0; i < gameCaro.length; i++) {
+            for (let j = 0; j < gameCaro[i].length; j++) {
+                if ((gameCaro[i][j] === gameCaro[i + 1][j + 1]) && (gameCaro[i + 2][j + 2] === gameCaro[i][j]) && (gameCaro[i][j] === n)) alert(n + ' win');
+                else if ((gameCaro[i][j] === gameCaro[i + 1][j - 1]) && (gameCaro[i + 2][j - 2] === gameCaro[i][j]) && (gameCaro[i][j] === n)) alert(n + ' win');
+            }
+        }
+    }
+</script>
+</body>
+</html>
