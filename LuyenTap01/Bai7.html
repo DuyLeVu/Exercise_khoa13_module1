@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise</title>
+</head>
+<body>
+<script>
+    let newArr = [];
+    for (i=0; i<10; i++){
+        newArr[i] = parseInt(prompt('Nhap phan tu thu ' + i));
+    }
+    let a = [];
+    let b = [];
+    let c = [];
+    let numV = parseInt(prompt('Enter V= '));
+    for (i=0; i<newArr.length; i++){
+        if (newArr[i] != numV) {
+            a.push(newArr[i]);
+        } else  if (newArr[i] == numV)  {
+            b.push('0'); }
+
+        // newArr[newArr.length -1] = 0;
+    }
+    c = a.concat(b);
+    document.write(c);
+
+</script>
+</body>
+</html>

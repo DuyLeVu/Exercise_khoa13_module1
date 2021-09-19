@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise</title>
+</head>
+<body>
+<script>
+    let newArr = [];
+    for (i=0; i<10; i++){
+        newArr[i] = parseInt(prompt('Nhap phan tu thu ' + i));
+    }
+    let numV = parseInt(prompt('Enter V= '));
+    let flag = false;
+    for (i=0; i<newArr.length; i++){
+        if (newArr[i] == numV) {
+            // document.write('V is in the array');
+            flag = true;
+        }
+    }
+    if (flag == true) document.write('V is in the array');
+    else document.write('V is not in the array');
+</script>
+</body>
+</html>

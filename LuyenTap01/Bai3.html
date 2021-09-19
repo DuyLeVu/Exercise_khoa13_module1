@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise</title>
+</head>
+<body>
+<script>
+    let num = parseInt(prompt('Nhap vao so luong phan tu cua mang: '));
+    let newArr = [];
+    for (i = 0; i < num; i++) {
+        newArr[i] = parseInt(prompt('Nhap phan tu thu ' + i));
+    }
+    let max = 0;
+    let total = 0
+    // console.log(max);
+    // console.log(newArr);
+    for (i = 0; i < newArr.length; i++) {
+        if (newArr[i] > max) {
+            max = newArr[i];
+        }
+        total += newArr[i];
+    }
+    total = total / num;
+    // console.log(max);
+    document.write('Max = ' + max + '. Tong trung binh = ' + total);
+</script>
+</body>
+</html>

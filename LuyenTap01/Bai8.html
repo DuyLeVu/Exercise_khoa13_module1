@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise</title>
+</head>
+<body>
+<script>
+    let newArr = [];
+    for (i=0; i<10; i++){
+        newArr[i] = parseInt(prompt('Nhap phan tu thu ' + i));
+    }
+    newArr.sort(function (a,b){
+        return b-a;
+    })
+    document.write(newArr);
+
+</script>
+</body>
+</html>

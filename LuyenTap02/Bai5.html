@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise</title>
+</head>
+<body>
+<script>
+    let numA = parseInt(prompt('Moi ban nhap so phan tu cua mang A '));
+    let newArrayA = [];
+    for (i = 0; i < numA; i++) {
+        newArrayA[i] = prompt('A[' + i + ']= ');
+    }
+    let newArrayB = [];
+    let numB = parseInt(prompt('Moi ban nhap so phan tu cua mang B '));
+    for (j = 0; j < numB; j++) {
+        newArrayB[j] = prompt('B[' + j + ']= ');
+    }
+    let flag = false
+    for (i = 0; i < newArrayA.length; i++) {
+        for (j = 0; j < newArrayB.length; j++)
+            if (newArrayA[i] === newArrayB[j]) {
+                flag = true;}
+                else flag = false;
+    }
+    if (flag == true) {
+        document.write('Hai mang giong nhau');
+    } else document.write('Hai mang khong giong nhau');
+</script>
+</body>
+</html>

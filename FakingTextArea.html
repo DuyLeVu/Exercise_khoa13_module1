@@ -12,19 +12,18 @@
     let txtArray = ["T","Ô", "I", " ", "L","À", " ", "M", "Ộ", "T", " ", "Đ", "Ứ", "A", " ", "N", "G", "Ố", "C", " ", "!", "!"];
     function txtAppear(){
         let txtLength = document.getElementById('txt').value;
-
-        for (i=1; i < txtLength.length; i++){
+        for (i=0; i < txtLength.length; i++){
             txtChange = txtChange + txtArray[i];
             if (i === 22){
                 document.getElementById('txt').value = "";
-                txtChange = '';
+                txtChange = "";
             }
         }
-        document.getElementById('txt').value = txtChange;
-        txtChange = "";
-
-       txtAppear();
+    document.getElementById('txt').value = txtChange;
+    txtChange = "";
+    setTimeout("txtAppear()",1);
     }
+
 </script>
 </body>
 </html>

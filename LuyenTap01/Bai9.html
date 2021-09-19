@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise</title>
+</head>
+<body>
+<script>
+    let a = [];
+    let b = [];
+    let c = [];
+    for (i = 0; i < 10; i++) {
+        a[i] = parseInt(prompt('Nhap phan tu thu ' + i +' mang A'));
+    }
+    for (j = 0; j < 10; j++) {
+        b[j] = parseInt(prompt('Nhap phan tu thu ' + j +' mang B'));
+    }
+    c = b.concat(a);
+    document.write(c);
+</script>
+</body>
+</html>

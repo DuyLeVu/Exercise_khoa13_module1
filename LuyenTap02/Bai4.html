@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise</title>
+</head>
+<body>
+<script>
+  let num = parseInt(prompt('Moi ban nhap so phan tu cua mang '));
+  let newArray = [];
+  let count = 0;
+  for (i = 0; i < num; i++) {
+    newArray[i] = prompt('A[' + i + ']= ');
+  }
+  for (i = 0; i < num; i++) {
+      //Đếm số từ trong chuỗi
+    if (newArray[i].trim() != "" && isNaN(newArray[i])){
+      count++;
+    }
+  }
+  document.write('So tu trong mang: ' + count);
+
+</script>
+</body>
+</html>
