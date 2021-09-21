@@ -34,24 +34,22 @@
     </tr>
 </table>
 <script>
-    let engArray = ["football", "tennis", "volleyball", "badminton", "basketball", "table tennis", "swimming", "cycling", "sailing"];
-    let vietArray = ["Bong Da", "Quan vot", "Bong Chuyen", "Cau Long", "Bong Ro", "Bong Ban", "Boi Loi", "Leo Nui", "Dua Thuyen"];
+    let arrayEng = ["football", "tennis", "volleyball", "badminton", "basketball", "table tennis", "swimming", "cycling", "sailing"];
+    let arrayViet = ["Bong Da", "Quan vot", "Bong Chuyen", "Cau Long", "Bong Ro", "Bong Ban", "Boi Loi", "Leo Nui", "Dua Thuyen"];
 
     function dictionary() {
         let engTxt = document.getElementById('txt').value;
-        let indexEng;
+        let check = false;
         // console.log(result);
-        for (let i = 0; i < engArray.length; i++) {
-            if (engTxt === engArray[i]) {
-                indexEng = engArray.indexOf(engTxt);
-                document.getElementById('result').innerHTML = vietArray[indexEng];
+        for (let i = 0; i < arrayEng.length; i++) {
+            if (engTxt === arrayEng[i]) {
+                document.getElementById('result').innerHTML = arrayViet[i];
+                check = true;
                 break;
             }
-            if (engTxt !== engArray[i]) {
-                indexEng = engArray.indexOf(engTxt);
+            if (check === false) {
                 document.getElementById('result').innerHTML = 'Not Found!';
             }
-
         }
     }
 </script>
