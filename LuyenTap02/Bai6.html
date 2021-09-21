@@ -6,16 +6,14 @@
 </head>
 <body>
 <script>
-    let num = parseInt(prompt('Moi ban nhap so phan tu cua mang '));
-    let newArray = [];
-    for (i = 0; i < num; i++) {
-        newArray[i] = prompt('A[' + i + ']= ');
-    }
-    for (i = 0; i < num; i++) {
+    let str =prompt('Nhap vao 1 chuoi')
+    let newArray = str.split('');
+    console.log(newArray);
+    for (i = 0; i < newArray.length; i++) {
         if (newArray[i] === '-') {
-           newArray[i] = '_'};
+           newArray[i] = '_';}
     }
-    document.write('Mang sau khi thay doi: ' + newArray);
+    document.write('Mang sau khi thay doi: ' + newArray.join(''));
 
 </script>
 
